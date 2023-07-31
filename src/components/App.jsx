@@ -12,12 +12,7 @@ export class App extends Component {
   }
   
   onLeaveFeedback = ({ target }) => {
-    this.setState((preState) => {
-      return {
-        ...preState,
-        [target.name]:preState[target.name]+1,
-      }
-   })
+    this.setState((preState) => ({[target.name]:preState[target.name]+1}))
   }
   countTotalFeedback = () => {
     const {good, neutral, bad,}=this.state
@@ -34,12 +29,12 @@ export class App extends Component {
   render() {
     return <>
       <Section title='Please leave feedback'>
-        <FeedbackOptions options={this.state} onLeaveFeedback={this.onLeaveFeedback}/>
+        <FeedbackOptions onLeaveFeedback={this.onLeaveFeedback}/>
       </Section>
       <Section title='Statistics' >
        { this.countTotalFeedback()
-        ? <Statistics {...this.state} total={this.countTotalFeedback} positivePercentage={this.countPositiveFeedbackPercentage} />
-        : <Notification message="There is no feedback"></Notification>}
+            ? <Statistics {...this.state} total={this.countTotalFeedback} positivePercentage={this.countPositiveFeedbackPercentage} />
+            : <Notification message="There is no feedback"></Notification>}
         
       </Section>
     </>
