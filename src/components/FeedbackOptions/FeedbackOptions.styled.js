@@ -16,6 +16,15 @@ export const Button = styled.button`
   min-width: 150px;
   &:hover,
   &:focus {
-    background-color: ${props => props.$color};
+    background-color: ${props => {
+      switch (props.name) {
+        case 'good':
+          return 'green';
+        case 'bad':
+          return 'red';
+        default:
+          return 'grey';
+      }
+    }};
   }
 `;

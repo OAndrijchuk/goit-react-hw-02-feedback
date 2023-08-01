@@ -29,7 +29,7 @@ export class App extends Component {
   render() {
     return <>
       <Section title='Please leave feedback'>
-        <FeedbackOptions onLeaveFeedback={this.onLeaveFeedback}/>
+        <FeedbackOptions onLeaveFeedback={this.onLeaveFeedback} buttons={this.state} />
       </Section>
       <Section title='Statistics' >
        { this.countTotalFeedback()

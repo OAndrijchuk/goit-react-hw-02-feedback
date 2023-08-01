@@ -6,5 +6,6 @@ export const StatisticsContainer = styled.div`
 `;
 export const Item = styled.p`
   color: ${props =>
-    props.$color || `rgb(${100 - props.$feedback}%,${props.$feedback}%, 0%)`};
+    props.$color ||
+    `rgb(${100 - props.$feedback}%,${props.$feedback / 2}%, 0%)`};
 `;

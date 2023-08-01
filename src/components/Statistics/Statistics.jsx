@@ -21,7 +21,7 @@ export const Statistics = (props) => {
 
 }
 
-Statistics.protoTypes = {
+Statistics.propTypes = {
     good:PropTypes.number,
     neutral:PropTypes.number,
     bad:PropTypes.number,
